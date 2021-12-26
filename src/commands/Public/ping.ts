@@ -14,7 +14,7 @@ export default class extends Command {
           title: "Pong!",
           description: `${this.container.client.ws.ping}ms`,
           footer: { text: "Axios v1.0.0 | Sapphire v2.2.1-stable" },
-          color: "GREEN",
+          color: this.container.client.ws.ping < 500 ? "GREEN" : "RED",
         },
       ],
     });
