@@ -1,0 +1,10 @@
+{
+    "extends": "@sapphire/ts-config/tsconfig.json",
+    "compilerOptions": {
+      "rootDir": "src",
+      "outDir": "dist",
+      "lib": ["ESNext", "DOM"],
+      "experimentalDecorators": true
+    },
+    "include": ["src"]
+}
