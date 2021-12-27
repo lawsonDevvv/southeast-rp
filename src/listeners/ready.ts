@@ -19,8 +19,4 @@ export default class extends Listener {
                     `);
     console.log(`${this.container.client.user?.tag} reporting for duty!`);
   }
-
-  async onLoad() {
-    console.log(`Loaded listener ${this.name}`);
-  }
 }
