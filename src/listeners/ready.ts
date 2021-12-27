@@ -2,12 +2,12 @@ import { Listener, ListenerOptions } from "@sapphire/framework";
 import { ApplyOptions } from '@sapphire/decorators';
 
 @ApplyOptions<ListenerOptions>({
-    event: "ready",
-    name: "ready"
+  event: "ready",
+  name: "ready",
 })
 export default class extends Listener {
-    async run(): Promise<void> {
-        console.log(`
+  async run(): Promise<void> {
+    console.log(`
 
                      █████╗ ██╗  ██╗██╗ ██████╗ ███████╗
                     ██╔══██╗╚██╗██╔╝██║██╔═══██╗██╔════╝
@@ -17,6 +17,10 @@ export default class extends Listener {
                     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚══════╝
 
                     `);
-        console.log(`${this.container.client.user?.tag} reporting for duty!`)
-    }
+    console.log(`${this.container.client.user?.tag} reporting for duty!`);
+  }
+
+  async onLoad() {
+    console.log(`Loaded listener ${this.name}`);
+  }
 }

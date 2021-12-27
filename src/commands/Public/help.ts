@@ -26,4 +26,8 @@ export default class extends Command {
       ],
     });
   }
+
+  async onLoad() {
+    console.log(`Loaded command ${this.name}`);
+  }
 }
