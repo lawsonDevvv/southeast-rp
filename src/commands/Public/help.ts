@@ -14,9 +14,10 @@ export default class extends Command {
           title: "Commands",
           description: `${this.container.stores
             .get("commands")
-            .map(
-              (command) =>
-                `\`a!${command.name} - ${command.category} - ${command.description}\``
+            .map((command) =>
+              command.enabled
+                ? `\`a!${command.name} - ${command.category} - ${command.description}\``
+                : `\`a!${command.name} - ${command.category} - ${command.description} (disabled)\``
             )
             .join("\n")}`,
           footer: { text: "Axios v1.0.0 | Sapphire v2.2.1-stable" },
