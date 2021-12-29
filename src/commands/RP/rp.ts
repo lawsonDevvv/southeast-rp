@@ -1,5 +1,5 @@
 import { ApplyOptions } from "@sapphire/decorators";
-import { Args, Command, CommandOptions } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { reply } from "@sapphire/plugin-editable-commands";
 import type { Message } from "discord.js";
 
@@ -8,7 +8,7 @@ import type { Message } from "discord.js";
   enabled: false,
 })
 export default class extends Command {
-  async messageRun(message: Message, args: Args): Promise<Message | Message[]> {
+  async messageRun(message: Message) {
     return reply(message, `Soon:tm:.`);
   }
 

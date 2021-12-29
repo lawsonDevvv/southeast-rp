@@ -1,10 +1,15 @@
-import { SapphireClient } from "@sapphire/framework";
+import { Manager } from "discord-hybrid-sharding";
+import "./lib/setup/index";
 
-require("dotenv").config();
-
-const client = new SapphireClient({
-  intents: ['GUILDS', 'GUILD_MESSAGES'],
-  defaultPrefix: "a!",
+const client = new Manager("dist/bot.js", {
+  totalShards: "auto",
+  totalClusters: 1,
+  mode: "process",
+  usev13: true,
+  token: process.env.token,
 });
 
-client.login(process.env.CLIENT_SECRET);
+client.on("clusterCreate", (cluster) =>
+  console.log(`Cluster ${cluster.id} Has Been Launched, Now Starting Bot`)
+);
+client.spawn(undefined, undefined, -1);
