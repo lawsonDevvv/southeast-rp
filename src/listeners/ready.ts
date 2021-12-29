@@ -18,5 +18,7 @@ export default class extends Listener {
 
                     `);
     console.log(`${this.container.client.user?.tag} reporting for duty!`);
+
+    this.container.client.user?.setActivity(`RIP KARL BOZO, LOST TO FUCKING SOUP`, { type: 'PLAYING' });
   }
 }
