@@ -1,4 +1,7 @@
+import type { Message } from "discord.js";
 import { LawsonClient } from "./lib/LawsonClient";
+
+export const snipes = new Map<string, Message>();
 
 const client = new LawsonClient();
 
