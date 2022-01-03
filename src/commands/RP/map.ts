@@ -13,7 +13,7 @@ export default class extends Command {
     const maps = ["Suburbia", "Downfall", "Backstreets", "Quarantine", "Kashlan"];
 
     try {
-      const map = Math.floor(Math.random() * (3 - 0) + 0);
+      const map = Math.floor(Math.random() * (4 - 0) + 0);
 
       reply(message, `Your map is... ${maps[map]}!`);
     } catch (error) {
