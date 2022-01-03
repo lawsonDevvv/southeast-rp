@@ -5,9 +5,10 @@ import type { Message } from "discord.js";
 
 @ApplyOptions<CommandOptions>({
   description: "Creates an RP session.",
-  enabled: false,
+  enabled: true,
 })
 export default class extends Command {
   async messageRun(message: Message) {
     return reply(message, `Soon:tm:.`);
   }
+}
