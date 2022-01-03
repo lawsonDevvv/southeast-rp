@@ -11,8 +11,3 @@ export default class extends Command {
   async messageRun(message: Message) {
     return reply(message, `Soon:tm:.`);
   }
-
-  async onLoad() {
-    console.log(`Loaded command ${this.name}`);
-  }
-}
