@@ -12,7 +12,6 @@ export default class extends Command {
   async messageRun(message: Message) {
     try {
       const snipe = snipes.get(message.channel.id);
-      console.log(snipes);
       if (!snipes.has(message.channel.id)) {
         return message.channel.send("There is no message to retrieve.");
       }

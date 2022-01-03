@@ -9,7 +9,5 @@ import { snipes } from "../bot";
 export default class extends Listener {
     async run(message: Message) {
         snipes.set(message.channel.id, message);
-        console.log(snipes);
-        console.log ("~wave~")
     }
 }
