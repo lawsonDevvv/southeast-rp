@@ -19,7 +19,7 @@ export default class extends Command {
           )
           .join("\n")}`
       )
-      .setFooter("SoutheastOS v1.0.0 | Sapphire v2.2.1-stable")
+      .setFooter({ text: "SoutheastOS v1.0.0 | Sapphire v2.2.1-stable" })
       .setColor("BLUE");
     return reply(message, { embeds: [embed] });
   }
