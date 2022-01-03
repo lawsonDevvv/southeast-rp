@@ -10,7 +10,7 @@ import type { Message } from "discord.js";
 })
 export default class extends Command {
   async messageRun(message: Message) {
-    const maps = ["Suburbia", "Backstreets", "Quarantine", "Kashlan"];
+    const maps = ["Suburbia", "Downfall", "Backstreets", "Quarantine", "Kashlan"];
 
     try {
       const map = Math.floor(Math.random() * (3 - 0) + 0);
