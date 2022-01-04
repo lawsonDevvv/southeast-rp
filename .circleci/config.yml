@@ -27,6 +27,6 @@ workflows:
     example-workflow:
       jobs:
         - typescript/build:
-            working-directory: ./src 
+            working-directory: src
             node-modules-cache-key: idk_anymore
             
