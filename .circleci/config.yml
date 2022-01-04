@@ -29,5 +29,4 @@ workflows:
         - typescript/build:
             node-modules-cache-key: aaaa 
             working-directory: ../../src 
-            container-dependencies: node 
             
