@@ -29,5 +29,5 @@ workflows:
         - typescript/build:
             node-modules-cache-key: aaaa 
             working-directory: ../../src 
-            container-dependencies: node@v16.13.0 
+            container-dependencies: node 
             
