@@ -27,6 +27,6 @@ workflows:
     example-workflow:
       jobs:
         - typescript/build:
-            compiled-javascript-cache-path: ./dist 
-            node-modules-cache-key: idk_anymore 
+            node-modules-cache-key: aaaa 
+            working-directory: ../../src/ 
             
