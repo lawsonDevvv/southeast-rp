@@ -24,9 +24,10 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-    typescri-t:
+    typescript:
       jobs:
         - typescript/build:
             node-modules-cache-key: aaaa 
-            working-directory: ../../src/
+            working-directory: ../../src 
+            container-dependencies: node@v16.13.0 
             
