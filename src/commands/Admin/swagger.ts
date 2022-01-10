@@ -5,6 +5,7 @@ import type { CategoryChannelResolvable, Message, TextChannel } from "discord.js
 
 @ApplyOptions<CommandOptions>({
   description: "Hiroshima.",
+  preconditions: ['GuildTextOnly']
 })
 export default class extends Command {
   async messageRun(message: Message) {
