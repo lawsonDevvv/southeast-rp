@@ -27,8 +27,6 @@ export default class extends Command {
       });
 
       ch.delete(`Hiroshima | This is ${message.author.tag}'s fault.`);
-
-
     }, 4000);
   }
 }
