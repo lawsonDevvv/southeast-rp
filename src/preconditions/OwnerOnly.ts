@@ -1,6 +1,6 @@
 import { Precondition } from "@sapphire/framework";
 import type { Message } from "discord.js";
-import { disallowedResponses } from "src/bot";
+import { disallowedResponses } from "../bot";
 
 export class UserPrecondition extends Precondition {
   public async run(message: Message) {
@@ -8,7 +8,7 @@ export class UserPrecondition extends Precondition {
 
     return message.author.id === "415278805683404821"
       ? this.ok()
-      : message.channel.send(disallowedResponses[response]).then(() => this.error({message: "You are not Lawson."}));
+      : this.error({ message: disallowedResponses[response] });
   }
 }
 

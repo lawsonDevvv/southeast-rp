@@ -8,11 +8,9 @@ export class UserPrecondition extends Precondition {
   public async run(message: Message) {
     const response = Math.floor(Math.random() * (10 - 0) + 0);
 
-    return ["1", "2", "3"].includes(message.author.id)
+    return ["415278805683404821", "780138986395926538"].includes(message.author.id)
       ? this.ok()
-      : message.channel
-          .send(disallowedResponses[response])
-          .then(() => this.error({ message: disallowedResponses[response] }));
+      : this.error({ message: disallowedResponses[response] });
   }
 }
 
