@@ -23,7 +23,7 @@ export default class extends Command {
           iconURL: message.author.displayAvatarURL({ dynamic: true }),
         })
         .setDescription(
-          message.content ??
+          snipe?.content ??
             "Looks like they sent an embed (I can't fucking read that shit)."
         )
         .setColor("GREEN")
