@@ -34,6 +34,9 @@ export default class extends Command {
     const suggestionMessage = await sugestionChannel.send({
       embeds: [suggestionEmbed],
     });
+
+    suggestionMessage.react("<:Yes:899074935299911780>");
+    suggestionMessage.react("<:No:899074935014686720>");
       
     const responseEmbed = new MessageEmbed().setDescription(
       `Done! You can view your suggestion by [clicking me](https://discord.com/channels/${message.guild?.id}/${suggestionMessage.channel.id}/${suggestionMessage.id})!`
