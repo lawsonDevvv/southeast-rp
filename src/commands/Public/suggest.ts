@@ -1,7 +1,11 @@
-import { Args, Command } from "@sapphire/framework";
+import { ApplyOptions } from "@sapphire/decorators";
+import { Args, Command, CommandOptions } from "@sapphire/framework";
 import { reply } from "@sapphire/plugin-editable-commands";
 import { Message, MessageEmbed, TextChannel } from "discord.js";
 
+@ApplyOptions<CommandOptions>({
+    description: "Make a suggestion to be voted on in the suggestions channel."
+})
 export default class extends Command {
   async messageRun(message: Message, args: Args): Promise<Message> {
     if (args.finished) {
