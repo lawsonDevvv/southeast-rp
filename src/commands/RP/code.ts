@@ -22,7 +22,7 @@ export default class extends Command {
       .addField("Code Generated", rng.toString())
       .addField("\u2800", "\u2800", true)
       .addField("Date & Time Generated", `${new Date()} EST`, true)
-      .setFooter("SoutheastOS v1.0.0 | Sapphire v2.2.1-stable")
+      .setFooter({ text: "SoutheastOS v1.0.0 | Sapphire v2.2.1-stable" })
       .setTimestamp();
     (
       message.guild?.channels.cache.get("925032510159736963") as TextChannel

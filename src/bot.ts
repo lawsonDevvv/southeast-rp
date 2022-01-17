@@ -1,6 +1,8 @@
 import type { Message } from "discord.js";
 import { LawsonClient } from "./lib/LawsonClient";
 import * as Sentry from "@sentry/node";
+import { Client } from "discord-hybrid-sharding";
+import { container } from "@sapphire/framework";
 
 export const snipes = new Map<string, Message>();
 
@@ -17,7 +19,7 @@ export const disallowedResponses = [
   "Did you think this would do something? Did you think I'd let you run this? No. Go back to the little hole you came from.",
   "Oh my fucking god- you thought that'd do something? Nah, not when you're running this command. Fuck off.",
   "You can't run that, but you can get this:\n    ❤️ ✨ 😄Has anyone ever told you that your face makes me fucking puke?😄✨❤️",
-  "You can't run that, but you can RUN YO FUCKIN' POCKETS."
+  "You can't run that, but you can RUN YO FUCKIN' POCKETS.",
 ];
 
 // 11
@@ -27,13 +29,17 @@ async function main() {
     client.logger.info("Attempting to login...");
     await client.login(process.env.token ?? "0");
     client.logger.info("Successfully Logged In ✅");
-    
+
+    container.clusters = new Client(client);
+
     Sentry.init({
       dsn: process.env.SENTRY_DSN,
       tracesSampleRate: 1.0,
-    })
+    });
   } catch (error) {
-    client.logger.fatal("I had an issue trying to initialize! The issue should be somewhere below this line.");
+    client.logger.fatal(
+      "I had an issue trying to initialize! The issue should be somewhere below this line."
+    );
     console.log(error);
   }
 }

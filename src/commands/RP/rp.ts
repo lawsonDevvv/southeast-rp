@@ -55,6 +55,9 @@ export default class extends Command {
       message.author
     )) as Message;
 
-    reply(message, `${mapResult.content} - ${hostResult.content} - ${codeResult.content} - ${startsAtResult.content} - ${adminVerificationResult.content}`);
+    reply(
+      message,
+      `${mapResult.content} - ${hostResult.content} - ${codeResult.content} - ${startsAtResult.content} - ${adminVerificationResult.content}`
+    );
   }
 }
