@@ -16,7 +16,7 @@ export default class extends SubCommandPluginCommand {
       // Find #help-is-required channel
       ?.channels.cache.get("906694882276544512") as TextChannel;
     await channel.send(
-      `@everyone - Incoming Call for Help - Respond to the Current RP\n\n*Called by ${message.author}*`
+      `@everyone - Incoming Call for Help - Respond to the Current RPn\n\nCall Info: ${await args.rest("string")}\n\n*Called by ${message.author}*`
     );
     await reply(message, "Done.");
   }
