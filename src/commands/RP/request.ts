@@ -10,6 +10,7 @@ import type { Message, TextChannel } from "discord.js";
 })
 export default class extends SubCommandPluginCommand {
   async police(message: Message, args: Args) {
+    if (args.finished) return reply(message, "Run that again, and this time, provide a description for it please!")
     const channel = this.container.client.guilds.cache
       // Find OPD Server
       .get("906690226984980502")
@@ -18,6 +19,6 @@ export default class extends SubCommandPluginCommand {
     await channel.send(
       `@everyone - Incoming Call for Help - Respond to the Current RPn\n\nCall Info: ${await args.rest("string")}\n\n*Called by ${message.author}*`
     );
-    await reply(message, "Done.");
+    return await reply(message, "Done.");
   }
 }
