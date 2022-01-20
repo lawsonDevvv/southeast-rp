@@ -24,7 +24,7 @@ export default class extends Command {
     const embed = new MessageEmbed()
       .setAuthor({
         name: snipe[0].author.tag,
-        iconURL: message.author.displayAvatarURL({ dynamic: true }),
+        iconURL: snipe[0].author.displayAvatarURL({ dynamic: true }),
       })
       .setColor("GREEN")
       .setDescription(
