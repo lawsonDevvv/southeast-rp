@@ -12,7 +12,7 @@ export class LawsonClient extends SapphireClient {
 
   constructor() {
     super({
-      defaultPrefix: "a!",
+      defaultPrefix: "+",
       intents: [
         "GUILDS",
         "GUILD_MEMBERS",
