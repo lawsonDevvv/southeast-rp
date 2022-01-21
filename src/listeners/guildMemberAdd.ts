@@ -24,11 +24,11 @@ export class GuildMemberAdd extends Listener {
         )
         .addField("Read the rules!", "<#895593079472533544>", true)
         .addField("Go read up about us!", "<#898634977116319765>", true)
-        .addField("Go apply for something!", "<#x>", true)
+        .addField("Go apply for something!", "<#898753633380884480>", true)
         .addField("\u2800", "\u2800", true)
         .addField(
           "And the most important rule, have fun!",
-          "<#923793655372869642>",
+          "<#929522993279942707>",
           true
         )
         .addField("\u2800", "\u2800", true)

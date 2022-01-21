@@ -2,9 +2,11 @@ import { ApplyOptions } from "@sapphire/decorators";
 import { Args, Command, CommandOptions } from "@sapphire/framework";
 import { reply } from "@sapphire/plugin-editable-commands";
 import { Message, MessageEmbed, TextChannel } from "discord.js";
+import minutes from "../../util/time/Minutes";
 
 @ApplyOptions<CommandOptions>({
-    description: "Makes a suggestion to be voted on in the suggestion channel.",
+  description: "Makes a suggestion to be voted on in the suggestion channel.",
+  cooldownDelay: minutes(1)
 })
 export default class extends Command {
   async messageRun(message: Message, args: Args): Promise<Message> {
@@ -34,6 +36,9 @@ export default class extends Command {
     const suggestionMessage = await sugestionChannel.send({
       embeds: [suggestionEmbed],
     });
+
+    suggestionMessage.react("<:Yes:899074935299911780>");
+    suggestionMessage.react("<:No:899074935014686720>");
       
     const responseEmbed = new MessageEmbed().setDescription(
       `Done! You can view your suggestion by [clicking me](https://discord.com/channels/${message.guild?.id}/${suggestionMessage.channel.id}/${suggestionMessage.id})!`
