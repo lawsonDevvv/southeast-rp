@@ -10,28 +10,24 @@ import { captureException } from "@sentry/node";
 })
 export default class extends Command {
   async messageRun(message: Message) {
-    try {
-      const snipe = snipes.get(message.channel.id);
+    const snipe = snipes.get(message.channel.id);
 
-      if (!snipes.has(message.channel.id)) {
-        return message.channel.send("There is no message to retrieve.");
-      }
-
-      const embed = new MessageEmbed()
-        .setAuthor({
-          name: message.author.tag,
-          iconURL: message.author.displayAvatarURL({ dynamic: true }),
-        })
-        .setDescription(
-          snipe?.content ??
-            "Looks like they sent an embed (I can't fucking read that shit)."
-        )
-        .setColor("GREEN")
-        .setTimestamp(message.createdAt);
-
-      return await message.channel.send({ embeds: [embed] });
-    } catch (error) {
-      return captureException(error, { tags: { name: this.name } });
+    if (!snipes.has(message.channel.id)) {
+      return message.channel.send("There is no message to retrieve.");
     }
+
+    const embed = new MessageEmbed()
+      .setAuthor({
+        name: message.author.tag,
+        iconURL: message.author.displayAvatarURL({ dynamic: true }),
+      })
+      .setDescription(
+        snipe?.content ??
+          "Looks like they sent an embed (I can't fucking read that shit)."
+      )
+      .setColor("GREEN")
+      .setTimestamp(message.createdAt);
+
+    return await message.channel.send({ embeds: [embed] });
   }
 }
