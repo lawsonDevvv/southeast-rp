@@ -18,8 +18,8 @@ export default class extends Command {
 
     const embed = new MessageEmbed()
       .setAuthor({
-        name: snipe?.author.tag as string,
-        iconURL: snipe?.author.displayAvatarURL({ dynamic: true }),
+        name: message.author.tag,
+        iconURL: message.author.displayAvatarURL({ dynamic: true }),
       })
       .setDescription(
         snipe?.content ??
