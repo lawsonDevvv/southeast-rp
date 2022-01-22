@@ -2,7 +2,6 @@ import { ApplyOptions } from "@sapphire/decorators";
 import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { snipes } from "../../bot";
-import { captureException } from "@sentry/node";
 
 @ApplyOptions<CommandOptions>({
   description: "Retrieve the last deleted message in the channel.",
