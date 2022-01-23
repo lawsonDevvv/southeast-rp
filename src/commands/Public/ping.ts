@@ -11,7 +11,7 @@ export default class extends Command {
     const embed = new MessageEmbed()
       .setTitle("Pong!")
       .setDescription(`${this.container.client.ws.ping}ms`)
-      .setFooter("Axios v1.0.0 | Sapphire v2.2.1-stable")
+      .setFooter({ text: "SoutheastOS v1.0.0 | Sapphire v2.2.1-stable" })
       .setColor(this.container.client.ws.ping < 500 ? "GREEN" : "RED");
     reply(message, {
       embeds: [embed],

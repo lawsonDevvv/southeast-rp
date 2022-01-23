@@ -1,4 +1,5 @@
 import { LogLevel, SapphireClient } from "@sapphire/framework";
+import * as Cluster from "discord-hybrid-sharding";
 
 export class LawsonClient extends SapphireClient {
   /**
@@ -11,7 +12,7 @@ export class LawsonClient extends SapphireClient {
 
   constructor() {
     super({
-      defaultPrefix: "a!",
+      defaultPrefix: "+",
       intents: [
         "GUILDS",
         "GUILD_MEMBERS",
@@ -23,7 +24,9 @@ export class LawsonClient extends SapphireClient {
         "DIRECT_MESSAGES",
         "DIRECT_MESSAGE_REACTIONS",
       ],
-      shards: "auto",
+
+      shards: Cluster.data.SHARD_LIST,
+      shardCount: Cluster.data.TOTAL_SHARDS,
       logger: {
         level: LogLevel.Debug,
       },

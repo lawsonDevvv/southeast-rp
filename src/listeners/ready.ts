@@ -7,16 +7,8 @@ import { ApplyOptions } from '@sapphire/decorators';
 })
 export default class extends Listener {
   async run(): Promise<void> {
-    console.log(`
+    this.container.logger.info(`${this.container.client.user?.tag} reporting for duty!`);
 
-                     █████╗ ██╗  ██╗██╗ ██████╗ ███████╗
-                    ██╔══██╗╚██╗██╔╝██║██╔═══██╗██╔════╝
-                    ███████║ ╚███╔╝ ██║██║   ██║███████╗
-                    ██╔══██║ ██╔██╗ ██║██║   ██║╚════██║
-                    ██║  ██║██╔╝ ██╗██║╚██████╔╝███████║
-                    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚══════╝
-
-                    `);
-    console.log(`${this.container.client.user?.tag} reporting for duty!`);
+    this.container.client.user?.setActivity(`RIP KARL BOZO, LOST TO FUCKING SOUP`, { type: 'PLAYING' });
   }
 }
