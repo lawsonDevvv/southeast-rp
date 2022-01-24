@@ -27,13 +27,13 @@ async function main() {
     await client.login(process.env.token ?? "0");
     client.logger.info("Successfully Logged In ✅");
     container.db = new PrismaClient();
-
     container.clusters = new Client(client);
 
     Sentry.init({
       dsn: process.env.SENTRY_DSN,
       tracesSampleRate: 1.0,
     });
+
   } catch (error) {
     client.logger.fatal(
       "I had an issue trying to initialize! The issue should be somewhere below this line."
