@@ -1,16 +1,7 @@
 import type { Message } from "discord.js";
 import { LawsonClient } from "./lib/LawsonClient";
-<<<<<<< HEAD
 import { container } from "@sapphire/framework";
 import { PrismaClient } from "@prisma/client";
-=======
-import * as Sentry from "@sentry/node";
-import { Client } from "discord-hybrid-sharding";
-import { container } from "@sapphire/framework";
-
-export const snipes = new Map<string, Message>();
-export const editsnipes = new Map<string, Array<Message>>();
->>>>>>> f584c3844173b11a9e548e5ccf1d4820c49f7432
 
 const client = new LawsonClient();
 
