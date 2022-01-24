@@ -1,11 +1,16 @@
 import type { Message } from "discord.js";
 import { LawsonClient } from "./lib/LawsonClient";
+<<<<<<< HEAD
+import { container } from "@sapphire/framework";
+import { PrismaClient } from "@prisma/client";
+=======
 import * as Sentry from "@sentry/node";
 import { Client } from "discord-hybrid-sharding";
 import { container } from "@sapphire/framework";
 
 export const snipes = new Map<string, Message>();
 export const editsnipes = new Map<string, Array<Message>>();
+>>>>>>> f584c3844173b11a9e548e5ccf1d4820c49f7432
 
 const client = new LawsonClient();
 
@@ -30,6 +35,9 @@ async function main() {
     client.logger.info("Attempting to login...");
     await client.login(process.env.token ?? "0");
     client.logger.info("Successfully Logged In ✅");
+<<<<<<< HEAD
+    container.db = new PrismaClient();
+=======
 
     container.clusters = new Client(client);
 
@@ -37,6 +45,7 @@ async function main() {
       dsn: process.env.SENTRY_DSN,
       tracesSampleRate: 1.0,
     });
+>>>>>>> f584c3844173b11a9e548e5ccf1d4820c49f7432
   } catch (error) {
     client.logger.fatal(
       "I had an issue trying to initialize! The issue should be somewhere below this line."
