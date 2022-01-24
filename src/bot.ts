@@ -26,9 +26,7 @@ async function main() {
     client.logger.info("Attempting to login...");
     await client.login(process.env.token ?? "0");
     client.logger.info("Successfully Logged In ✅");
-<<<<<<< HEAD
     container.db = new PrismaClient();
-=======
 
     container.clusters = new Client(client);
 
@@ -36,7 +34,6 @@ async function main() {
       dsn: process.env.SENTRY_DSN,
       tracesSampleRate: 1.0,
     });
->>>>>>> f584c3844173b11a9e548e5ccf1d4820c49f7432
   } catch (error) {
     client.logger.fatal(
       "I had an issue trying to initialize! The issue should be somewhere below this line."
