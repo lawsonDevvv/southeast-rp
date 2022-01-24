@@ -2,6 +2,8 @@ import type { Message } from "discord.js";
 import { LawsonClient } from "./lib/LawsonClient";
 import { container } from "@sapphire/framework";
 import { PrismaClient } from "@prisma/client";
+import * as Sentry from '@sentry/node';
+import { Client } from "discord-hybrid-sharding";
 
 const client = new LawsonClient();
 
