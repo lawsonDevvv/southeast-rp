@@ -5,6 +5,9 @@ import { PrismaClient } from "@prisma/client";
 import * as Sentry from '@sentry/node';
 import { Client } from "discord-hybrid-sharding";
 
+export const snipes = new Map<string, Message>();
+export const editsnipes = new Map<string, Message[]>();
+
 const client = new LawsonClient();
 
 export const disallowedResponses = [
