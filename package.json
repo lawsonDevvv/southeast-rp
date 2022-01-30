@@ -2,7 +2,7 @@
   "name": "southeast-rp",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/Index.js",
   "scripts": {
     "dev": "tsc & node ./dist/Index.js",
     "build": "tsc",
