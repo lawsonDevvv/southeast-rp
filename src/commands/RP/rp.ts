@@ -1,6 +1,6 @@
 import { ApplyOptions } from "@sapphire/decorators";
 import { MessagePrompter } from "@sapphire/discord.js-utilities";
-import { Args, Command, CommandOptions } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { reply } from "@sapphire/plugin-editable-commands";
 import { Message, MessageEmbed, TextChannel } from "discord.js";
 
