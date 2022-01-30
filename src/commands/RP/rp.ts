@@ -9,7 +9,7 @@ import { Message, MessageEmbed, TextChannel } from "discord.js";
   enabled: true,
 })
 export default class extends Command {
-  async messageRun(message: Message, args: Args) {
+  async messageRun(message: Message) {
     const map = new MessagePrompter("What map is this on?", "message");
 
     const mapResult = (await map.run(
