@@ -2,10 +2,6 @@ import { LogLevel, SapphireClient } from "@sapphire/framework";
 import * as Cluster from "discord-hybrid-sharding";
 
 export class LawsonClient extends SapphireClient {
-  /**
-   *
-   */
-
   public async login(token: string) {
     return super.login(token);
   }
