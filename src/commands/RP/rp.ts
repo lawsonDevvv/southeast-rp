@@ -74,8 +74,8 @@ export default class extends Command {
       .setFooter({ text: `Requested by ${message.author.tag}` })
       .setTimestamp(Date.now());
 
-    const rpMessage = await (
-      message.guild?.channels.cache.get("922537837621047376") as TextChannel
+    const rpMessage = await(
+      message.guild?.channels.cache.get("937712506070249503") as TextChannel
     ).send({ embeds: [embed], content: "<@&895593079187316764>" });
 
     await rpMessage.react("<:Yes:899074935299911780>");
