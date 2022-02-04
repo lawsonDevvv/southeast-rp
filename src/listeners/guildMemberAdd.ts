@@ -1,11 +1,13 @@
 import { ApplyOptions } from "@sapphire/decorators";
 import { Events, Listener, ListenerOptions } from "@sapphire/framework";
 import { GuildMember, MessageEmbed, TextChannel } from "discord.js";
+import suffix from "../util/numbers/suffix";
 
 @ApplyOptions<ListenerOptions>({ event: Events.GuildMemberAdd })
 export class GuildMemberAdd extends Listener {
   async run(member: GuildMember) {
     if (member.guild.id === "895593078751125555") {
+      await member.guild.fetch()
       const channel = member.guild?.channels.cache.get(
         "925186390893932584"
       ) as TextChannel;
@@ -14,6 +16,7 @@ export class GuildMemberAdd extends Listener {
         .setTitle("New member!")
         .setDescription(
           `Welcome to ${member.guild.name}, ${member.user.tag}!
+          You're our ${member.guild.memberCount}${suffix(member.guild.memberCount)} member!
         We are an Onward based Roleplay server that aims to fulfill immersion and enjoyability for all members.
 
 
