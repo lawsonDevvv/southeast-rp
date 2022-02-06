@@ -17,8 +17,4 @@ export default class extends Command {
       embeds: [embed],
     });
   }
-
-  async onLoad() {
-    console.log(`Loaded command ${this.name}`);
-  }
 }

@@ -23,7 +23,4 @@ export default class extends Command {
       .setColor("BLUE");
     return reply(message, { embeds: [embed] });
   }
-  async onLoad() {
-    console.log(`Loaded command ${this.name}`);
-  }
 }
