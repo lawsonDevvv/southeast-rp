@@ -7,19 +7,6 @@ import { CommandInteraction, MessageEmbed } from "discord.js";
   preconditions: ["OwnerOnly"]
 })
 export abstract class EvalCommand extends Command {
-  // async messageRun(message: Message, args: Args): Promise<void> {
-  //     const code = await args.rest("string");
-  //     const evaled = eval(code);
-  //     try {
-  //         reply(
-  //           message,
-  //           `Code: \`\`\`js\n${code}\n\`\`\`\n\n\n\nOutput: \`\`\`js\n${evaled}\n\`\`\``
-  //         );
-  //     } catch (e) {
-  //         reply(message, `Code: \`\`\`js\n${code}\n\`\`\`\n\n\n\nOutput: \`\`\`js\n${e}\n\`\`\``);
-  //     }
-  // }
-
   public registerApplicationCommands(registry: ApplicationCommandRegistry) {
     const builder = new SlashCommandBuilder()
       .setName("eval")
