@@ -8,6 +8,7 @@ export class LawsonClient extends SapphireClient {
 
   constructor() {
     super({
+      loadMessageCommandListeners: true,
       intents: [
         "GUILDS",
         "GUILD_MEMBERS",
