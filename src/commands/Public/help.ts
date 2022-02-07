@@ -1,13 +1,21 @@
+import { SlashCommandBuilder } from "@discordjs/builders";
 import { ApplyOptions } from "@sapphire/decorators";
-import { Command, CommandOptions } from "@sapphire/framework";
-import { reply } from "@sapphire/plugin-editable-commands";
-import { Message, MessageEmbed } from "discord.js";
+import { ApplicationCommandRegistry, Command, CommandOptions } from "@sapphire/framework";
+import { CommandInteraction, MessageEmbed } from "discord.js";
 
 @ApplyOptions<CommandOptions>({
   description: "Displays all commands and their descriptions",
 })
 export default class extends Command {
-  async messageRun(message: Message) {
+  registerApplicationCommands(registry: ApplicationCommandRegistry) {
+    const builder = new SlashCommandBuilder()
+      .setName("help")
+      .setDescription("Display all of my commands!");
+    
+    registry.registerChatInputCommand(builder);
+  }
+
+  async chatInputRun(interaction: CommandInteraction) {
     const embed = new MessageEmbed()
       .setTitle("Commands")
       .setDescription(
@@ -21,6 +29,6 @@ export default class extends Command {
       )
       .setFooter({ text: "SoutheastOS v1.0.0 | Sapphire v2.2.1-stable" })
       .setColor("BLUE");
-    return reply(message, { embeds: [embed] });
+    interaction.reply({ embeds: [embed] });
   }
 }
