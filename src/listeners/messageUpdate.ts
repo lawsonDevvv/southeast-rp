@@ -11,6 +11,13 @@ export default class extends Listener {
     // edit snipe stuff
     // set map for channelid to array of old message and new message (to be accessed in editsnipe.ts in commands/Public)
 
+    // ignore message if old content is same as new content
+    // fixes issue where messages with links that embed get editted by discord to add the embed
+    // and it gets caught here
+    if (oldMessage.content === newMessage.content) {
+      return;
+    }
+
     editsnipes.set(oldMessage.channelId, [oldMessage, newMessage]);
       
     // logging shit
