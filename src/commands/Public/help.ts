@@ -23,7 +23,7 @@ export default class extends Command {
           .get("commands")
           .map(
             (command) =>
-              `\`+${command.name} - ${command.category} - ${command.description}\``
+              `\`/${command.name} - ${command.category} - ${command.description}\``
           )
           .join("\n")}`
       )
