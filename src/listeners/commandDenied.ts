@@ -5,7 +5,7 @@ import { ChatInputCommandDeniedPayload, Events, Listener, ListenerOptions, UserE
     event: Events.ChatInputCommandDenied
 })
 export default class extends Listener {
-    async run(error: UserError, { interaction }: ChatInputCommandDeniedPayload) {
+    async run(_error: UserError, { interaction }: ChatInputCommandDeniedPayload) {
         interaction.reply("No.")
     }
 }
