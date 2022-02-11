@@ -41,8 +41,8 @@ export default class extends Command {
       // Find #help-is-required channel
       ?.channels.cache.get("906694882276544512") as TextChannel;
     await channel.send(
-      `@everyone - Incoming Call for Help - Respond to the Current RPn\n\nCall Info: ${interaction.options.getString(
-        ""
+      `@everyone - Incoming Call for Help - Respond to the Current RP\n\nCall Info: ${interaction.options.getString(
+        "call_info"
       )}\n\n*Called by ${interaction.user}*`
     );
     return await interaction.reply("Done.");
