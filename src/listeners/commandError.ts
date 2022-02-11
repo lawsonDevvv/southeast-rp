@@ -1,19 +1,17 @@
 import { ApplyOptions } from "@sapphire/decorators";
 import {
-  CommandErrorPayload,
+  ChatInputCommandErrorPayload,
   Events,
   Listener,
   ListenerOptions,
 } from "@sapphire/framework";
-import { reply } from "@sapphire/plugin-editable-commands";
 
 @ApplyOptions<ListenerOptions>({
-  event: Events.CommandError,
+  event: Events.ChatInputCommandError,
 })
 export default class extends Listener {
-  async run(error: Error, payload: CommandErrorPayload) {
-    reply(
-      payload.message,
+  async run(error: Error, payload: ChatInputCommandErrorPayload) {
+    payload.interaction.reply(
       `This command died while it was running...
       
         Cause of death: **ate shit**

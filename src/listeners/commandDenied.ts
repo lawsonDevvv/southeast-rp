@@ -1,11 +1,11 @@
 import { ApplyOptions } from "@sapphire/decorators";
-import { CommandDeniedPayload, Events, Listener, ListenerOptions, UserError } from "@sapphire/framework";
+import { ChatInputCommandDeniedPayload, Events, Listener, ListenerOptions, UserError } from "@sapphire/framework";
 
 @ApplyOptions<ListenerOptions>({
-    event: Events.CommandDenied
+    event: Events.ChatInputCommandDenied
 })
 export default class extends Listener {
-    async run(error: UserError, { message }: CommandDeniedPayload) {
-        message.channel.send(error.message)
+    async run(_error: UserError, { interaction }: ChatInputCommandDeniedPayload) {
+        interaction.reply("No.")
     }
 }
