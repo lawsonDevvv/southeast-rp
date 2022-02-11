@@ -31,8 +31,7 @@ async function main() {
     client.logger.info("Attempting to login...");
     await client.login(process.env.token ?? "0");
     client.logger.info("Successfully Logged In ✅");
-    container.db = new PrismaClient();
-    container.clusters = new Client(client);
+    client.clusters = new Client(client)
 
     Sentry.init({
       dsn: process.env.SENTRY_DSN,
